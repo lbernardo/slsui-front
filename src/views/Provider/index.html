@@ -1,0 +1,15 @@
+<div>
+    <h3>Provider</h3>
+    <div class="field">
+        <label>Name:</label>
+        <sui-input placeholder="Service name" v-model="form.name" />
+    </div>
+    <div class="field">
+        <label>Runtime:</label>
+        <sui-dropdown :options="runtimes" placeholder="Select runtime" v-model="form.runtime" search selection />
+    </div>
+    <div class="field">
+        <label>Region:</label>
+        <sui-input placeholder="Region" v-model="form.region" />
+    </div>
+</div>
