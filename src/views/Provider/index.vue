@@ -25,30 +25,6 @@ export default {
             {"text": ".NET Core 3.1", "value": "dotnetcore3.1"},
             {"text": ".NET Core 2.1", "value": "dotnetcore2.1"},
         ],
-        regions: [
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-            {"text": "", "value":""},
-                
-        ]
     })
 }
 </script>
