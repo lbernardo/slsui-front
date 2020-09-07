@@ -1,8 +1,8 @@
-<div>
+<form @submit="saveProvider">
     <h3>Provider</h3>
     <div class="field">
         <label>Name:</label>
-        <sui-input placeholder="Service name" v-model="form.name" />
+        <sui-input required placeholder="Service name" v-model="form.name" />
     </div>
     <div class="field">
         <label>Runtime:</label>
@@ -10,6 +10,14 @@
     </div>
     <div class="field">
         <label>Region:</label>
-        <sui-input placeholder="Region" v-model="form.region" />
+        <sui-dropdown :options="regions" placeholder="Select region" v-model="form.region" search selection />
     </div>
-</div>
+    <div class="field">
+        <label>Memory Size:</label>
+        <sui-input placeholder="Memory Size" v-model="form.memorySize" />
+    </div>
+    <div class="field">
+        <label>Timeout:</label>
+        <sui-input type="number" min="10" placeholder="Timeout" v-model="form.timeout" />
+    </div>
+</form>
