@@ -6,9 +6,17 @@ export default {
   components: {
       Button
   },
+  data: () => ({
+      add: false,
+  }),
+  computed: {
+      active: function() {
+          return this.add ? 'block' : 'none';
+      }
+  },
   methods: {
-      addLambda() {
-          console.log("adicionar lambda");
+      toggleForm() {
+          this.add =  !this.add;
       }
   }
 };
