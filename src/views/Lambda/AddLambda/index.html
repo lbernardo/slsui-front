@@ -1,0 +1,18 @@
+<sui-form>
+    <div class="row">
+        <div class="col-md-6">
+            <sui-form-field>
+                <label>Function name:</label>
+                <input placeholder="Name" v-model="form.name" />
+            </sui-form-field>
+            <sui-form-field>
+                <label>Handler:</label>
+                <input placeholder="Handler" v-model="form.handler" />
+            </sui-form-field>
+            <sui-form-field>
+                <label>Event:</label>
+                <sui-dropdown :options="events" placeholder="Select event" v-model="form.event" search selection />
+            </sui-form-field>        
+        </div>
+    </div>
+</sui-form>

@@ -1,32 +1,5 @@
 <div class="lambda">
     <div class="text-right">
-        <Button @click="toggleForm">Add new lambda</Button>
-    </div>
-    <div class="modal" v-bind:style="{display: active}" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">New lambda</h5>
-                    <button type="button" class="close" @click="toggleForm" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <sui-form>
-                        <sui-form-field>
-                            <label>Function name:</label>
-                            <input placeholder="Name" />
-                        </sui-form-field>
-                        <sui-form-field>
-                            <label>Handler:</label>
-                            <input placeholder="Handler" />
-                        </sui-form-field>
-                    </sui-form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
+        <Button @click="addLambda">Add new lambda</Button>
     </div>
 </div>

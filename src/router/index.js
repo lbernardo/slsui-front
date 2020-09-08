@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Provider from '@/views/Provider';
 import Lambda from '@/views/Lambda';
+import AddLambda from '@/views/Lambda/AddLambda';
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ Vue.use(VueRouter)
     path: "/lambda",
     name: "Lambda",
     component: Lambda,
+  },
+  { 
+    path: "/lambda/add",
+    name: "AddLambda",
+    component: AddLambda,
   }
 ]
 

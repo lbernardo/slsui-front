@@ -6,17 +6,9 @@ export default {
   components: {
       Button
   },
-  data: () => ({
-      add: false,
-  }),
-  computed: {
-      active: function() {
-          return this.add ? 'block' : 'none';
-      }
-  },
   methods: {
-      toggleForm() {
-          this.add =  !this.add;
+      addLambda() {
+          this.$router.push('/lambda/add');
       }
   }
 };
