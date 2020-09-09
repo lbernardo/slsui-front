@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import lambda from "./lambda";
 
 Vue.use(Vuex)
 
@@ -18,5 +19,6 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
+    lambda: lambda
   }
 })

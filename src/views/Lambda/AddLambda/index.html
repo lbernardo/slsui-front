@@ -1,4 +1,4 @@
-<sui-form>
+<sui-form @submit="addLambda">
     <div class="row">
         <div class="col-md-6">
             <sui-form-field>
@@ -24,7 +24,7 @@
         </sui-form-field>
         <sui-form-field>
             <label>Path:</label>
-            <input placeholder="Path" v-model="form.apigateway.path" />
+            <input placeholder="Path" autocomplete="false" v-model="form.apigateway.path" />
         </sui-form-field>
         </div>
     </div>

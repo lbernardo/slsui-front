@@ -30,6 +30,12 @@ export default {
             {"text": "PATCH", "value": "PATCH"},
             {"text": "DELETE", "value": "DELETE"}
         ]
-    })
+    }),
+    methods: {
+        addLambda(e) {
+            e.preventDefault();
+            this.$store.dispatch("lambda/addFunction", this.form);
+        }
+    }
 }
 </script>
