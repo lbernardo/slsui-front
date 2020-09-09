@@ -12,7 +12,26 @@
             <sui-form-field>
                 <label>Event:</label>
                 <sui-dropdown :options="events" placeholder="Select event" v-model="form.event" search selection />
-            </sui-form-field>        
+            </sui-form-field>
+        </div>
+    </div>
+
+    <div v-if="form.event == 'apigateway'" class="row">
+        <div class="col-md-6">
+        <sui-form-field>
+            <label>Method:</label>
+            <sui-dropdown :options="methods" placeholder="Select method" v-model="form.apigateway.method" search selection />
+        </sui-form-field>
+        <sui-form-field>
+            <label>Path:</label>
+            <input placeholder="Path" v-model="form.apigateway.path" />
+        </sui-form-field>
+        </div>
+    </div>
+
+    <div class="row" v-show="form.event != null">
+        <div class="col-md-6">
+            <Button>Save</Button> 
         </div>
     </div>
 </sui-form>

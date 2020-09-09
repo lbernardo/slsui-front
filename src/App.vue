@@ -31,4 +31,7 @@ body {
 .bd.bgc-white {
   padding: 15px;
 }
+#mainContent  .row {
+  margin-bottom: 10px;
+}
 </style>
