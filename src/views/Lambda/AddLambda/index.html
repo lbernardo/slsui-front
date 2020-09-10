@@ -3,15 +3,15 @@
         <div class="col-md-6">
             <sui-form-field>
                 <label>Function name:</label>
-                <input placeholder="Name" v-model="form.name" />
+                <input placeholder="Name" required v-model="form.name" />
             </sui-form-field>
             <sui-form-field>
                 <label>Handler:</label>
-                <input placeholder="Handler" v-model="form.handler" />
+                <input placeholder="Handler" required v-model="form.handler" />
             </sui-form-field>
             <sui-form-field>
                 <label>Event:</label>
-                <sui-dropdown :options="events" placeholder="Select event" v-model="form.event" search selection />
+                <sui-dropdown :options="events"  placeholder="Select event" v-model="form.event" search selection />
             </sui-form-field>
         </div>
     </div>
@@ -24,10 +24,59 @@
         </sui-form-field>
         <sui-form-field>
             <label>Path:</label>
-            <input placeholder="Path" autocomplete="false" v-model="form.apigateway.path" />
+            <input placeholder="Path" required autocomplete="false" v-model="form.apigateway.path" />
         </sui-form-field>
         </div>
     </div>
+
+    <div v-if="form.event == 's3'" class="row">
+        <div class="col-md-6">
+            <sui-form-field>
+                <label>Bucket:</label>
+                <input placeholder="Bucket" required autocomplete="false" v-model="form.s3.bucket" />
+            </sui-form-field>
+            <sui-form-field>
+                <label>Permission:</label>
+                <sui-dropdown :options="s3permissions" placeholder="Permission" v-model="form.s3.permission" search selection />
+            </sui-form-field>
+        </div>
+    </div>
+
+    <div v-if="form.event == 'schedule'" class="row">
+        <div class="col-md-6">
+            <sui-form-field>
+                <label>Select type:</label>
+                <sui-dropdown :options="scheduleTypes" placeholder="Type" v-model="form.schedule.type" search selection />
+            </sui-form-field>
+            <div v-if="form.schedule.type == 'rate'">
+                <sui-form-field>
+                    <label>Rate:</label>
+                    <input type="number" min="1" v-model="form.schedule.rateNum" />
+                </sui-form-field>
+                <sui-form-field>
+                    <label>Period:</label>
+                    <sui-dropdown :options="periods" placeholder="Period" v-model="form.schedule.ratePeriod" selection />
+                </sui-form-field>
+            </div>
+            <div v-if="form.schedule.type == 'cron'">
+                <sui-form-field>
+                    <label>Period:</label>
+                    <input type="text" autocomplete="off" required v-model="form.schedule.cronPeriod" />
+                    <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions" target="_blank">Documentation</a>
+                </sui-form-field>
+            </div>
+        </div>      
+    </div>
+
+    <div v-if="form.event == 'sqs'" class="row">
+        <div class="col-md-6">
+            <sui-form-field>
+                <label>Value:</label>
+                <input type="text" autocomplete="off" v-model="form.sqs.value" placeholder="SQS" />
+            </sui-form-field>
+        </div>
+    </div>
+
 
     <div class="row" v-show="form.event != null">
         <div class="col-md-6">

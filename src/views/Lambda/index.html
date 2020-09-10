@@ -1,5 +1,23 @@
 <div class="lambda">
-    <div class="text-right">
+    <div class="text-right" style="margin-bottom: 10px">
         <Button @click="addLambda">Add new lambda</Button>
     </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Function</th>
+                <th>Handler</th>
+                <th>Event</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr :key="i" v-for="(fn, i) in functions">
+                <td>{{fn.name}}</td>
+                <td>{{fn.handler}}</td>
+                <td v-html="getEvent(fn)"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
