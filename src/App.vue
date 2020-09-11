@@ -8,10 +8,13 @@
           <div class="bd bgc-white">
             <router-view />
           </div>
+          
         </div>
       </main>
     </div>
+    <button type="button" class="ui button primary" id="build"><i class="fas fa-cogs"></i> Build</button>
   </div>
+  
 </template>
 <script>
 import Sidebar from '@/components/Sidebar';
@@ -33,5 +36,12 @@ body {
 }
 #mainContent  .row {
   margin-bottom: 10px;
+}
+#build {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 280px;
+  z-index: 5000;
 }
 </style>
