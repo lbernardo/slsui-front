@@ -21,6 +21,11 @@ Vue.use(VueRouter)
     path: "/lambda/add",
     name: "AddLambda",
     component: AddLambda,
+  },
+  {
+    path: "/lambda/edit/:id",
+    name: "EditLambda",
+    component: AddLambda,
   }
 ]
 

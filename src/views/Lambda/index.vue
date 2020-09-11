@@ -26,6 +26,11 @@ export default {
                 case "sqs":
                     return `<label class="ui label mini green" title="SQS">${fn.sqs.value}</label>`
           }
+      },
+      removeLambda(index) {
+          if (window.confirm("Você tem certeza que deseja excluir esta função?")) {
+              this.$store.dispatch("lambda/removeFunction", index);
+          }
       }
   }
 };

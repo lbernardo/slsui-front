@@ -5,6 +5,7 @@ import router from './router'
 import store from './store'
 import './assets/styles/index.scss';
 import 'semantic-ui-css/semantic.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 Vue.config.productionTip = false
 Vue.use(SuiVue);

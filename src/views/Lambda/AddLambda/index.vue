@@ -7,6 +7,7 @@ export default {
         Button
     },
     data: () => ({
+        edit: -1,
         form: {
             event: "apigateway",
             name: "",
@@ -57,10 +58,28 @@ export default {
             {"text": "hours", "value": "hours"}
         ]
     }),
+    mounted() {
+        if (this.$route.params.id != undefined) {
+           const data = this.$store.state.lambda.functions[this.$route.params.id];          
+           if (data != undefined) {
+            this.form = data;
+            this.edit = this.$route.params.id;
+           }
+        }
+    },
     methods: {
         addLambda(e) {
             e.preventDefault();
-            this.$store.dispatch("lambda/addFunction", this.form);
+            if (this.edit == -1) {
+                this.$store.dispatch("lambda/addFunction", this.form);
+                this.$router.push("/lambda");
+                return;
+            }
+
+            this.$store.dispatch("lambda/editFunction",{
+                index: this.edit,
+                data: this.form
+            });
             this.$router.push("/lambda");
         }
     }

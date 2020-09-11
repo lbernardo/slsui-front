@@ -16,7 +16,10 @@
                 <td>{{fn.name}}</td>
                 <td>{{fn.handler}}</td>
                 <td v-html="getEvent(fn)"></td>
-                <td></td>
+                <td>
+                    <router-link :to="{name: 'EditLambda', params: {id: i}}" class="text-info"><i class="fa fa-edit"></i></router-link>
+                    <a href="javascript:void(0)"  @click="removeLambda(i)" style="margin-left: 10px" class="text-danger"><i class="fa fa-trash"></i></a>
+                </td>
             </tr>
         </tbody>
     </table>
