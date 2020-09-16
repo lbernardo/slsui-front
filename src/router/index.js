@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Provider from '@/views/Provider';
 import Lambda from '@/views/Lambda';
 import AddLambda from '@/views/Lambda/AddLambda';
+import Dynamodb from '@/views/Dynamodb';
 
 Vue.use(VueRouter)
 
@@ -26,6 +27,11 @@ Vue.use(VueRouter)
     path: "/lambda/edit/:id",
     name: "EditLambda",
     component: AddLambda,
+  },
+  {
+    path: "/dynamodb",
+    name: "Dynamodb",
+    component: Dynamodb,
   }
 ]
 
