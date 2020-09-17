@@ -1,5 +1,26 @@
 <div class="dynamodb">
     <div class="text-right" style="margin-bottom: 10px">
-        <Button @click="">Add new database</Button>
+        <Button @click="addDatabase">Add new database</Button>
     </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Resource</th>
+                <th>Table</th>
+                <th>R/W Capacity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr :key="i" v-for="(db, i) in databases">
+                <td>{{db.name}}</td>
+                <td>{{db.tableName}}</td>
+                <td>{{db.throughput.readCapacityUnits}} / {{db.throughput.readCapacityUnits}}</td>
+                <td>
+                    <router-link :to="{name: 'EditDynamodb', params: {id: i}}" class="text-info"><i class="fa fa-edit"></i></router-link>
+                    <a href="javascript:void(0)"  @click="removeDatabase(i)" style="margin-left: 10px" class="text-danger"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

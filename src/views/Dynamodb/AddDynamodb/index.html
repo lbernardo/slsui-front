@@ -1,0 +1,44 @@
+<sui-form @submit="addDatabase">
+    <div class="row">
+        <div class="col-md-6">
+            <sui-form-field>
+                <label>Resource name:</label>
+                <input placeholder="Name" required v-model="form.name" />
+            </sui-form-field>
+            <sui-form-field>
+                <label>Table Name:</label>
+                <input placeholder="Table name" required v-model="form.tableName" />
+            </sui-form-field>
+            <sui-form-field>
+                <label>Attribute Definition Name:</label>
+                <input placeholder="Attribute definition name" required v-model="form.attributeDefinition.attributeName" />
+            </sui-form-field>
+            <sui-form-field>
+                <label>Attribute Definition Type:</label>
+                <sui-dropdown :options="optionsAttributeTypes"  placeholder="Select type" v-model="form.attributeDefinition.attributeType" selection />
+            </sui-form-field>
+            <sui-form-field>
+                <label>Key Schema name:</label>
+                <input placeholder="Key Schema name" required v-model="form.keySchema.attributeName" />
+            </sui-form-field>
+            <sui-form-field>
+                <label>Key Schema type:</label>
+                <sui-dropdown :options="optionsKeySchemaTypes"  placeholder="Select type" v-model="form.keySchema.keyType" selection />
+            </sui-form-field>
+            <sui-form-field>
+                <label>Read Capacity:</label>
+                <input placeholder="Read Capacity (0 PAY_PER_REQUEST)" required v-model="form.throughput.readCapacityUnits" />
+            </sui-form-field>
+            <sui-form-field>
+                <label>Write Capacity:</label>
+                <input placeholder="Write Capacity (0 PAY_PER_REQUEST)" required v-model="form.throughput.writeCapacityUnits" />
+            </sui-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary">Save</button> 
+        </div>
+    </div>
+</sui-form>

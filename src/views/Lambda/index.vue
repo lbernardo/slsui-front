@@ -28,7 +28,7 @@ export default {
           }
       },
       removeLambda(index) {
-          if (window.confirm("Você tem certeza que deseja excluir esta função?")) {
+          if (window.confirm("Are you sure?")) {
               this.$store.dispatch("lambda/removeFunction", index);
           }
       }
