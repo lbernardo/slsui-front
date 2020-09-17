@@ -12,7 +12,7 @@
         </div>
       </main>
     </div>
-    <button type="button" class="ui button primary" id="build"><i class="fas fa-cogs"></i> Build</button>
+    <button type="button" @click="build" class="ui button primary" id="build"><i class="fas fa-cogs"></i> Build</button>
   </div>
   
 </template>
@@ -24,6 +24,11 @@ export default {
   components: {
      Sidebar,
     Header,
+  },
+  methods: {
+    build() {
+      this.$store.dispatch("build");
+    }
   }
 }
 </script>

@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import lambda from "./lambda";
 import dynamodb from "./dynamodb";
 import sqs from "./sqs";
+import appBuild from "@/api/build";
 
 Vue.use(Vuex)
 
@@ -19,6 +20,16 @@ export default new Vuex.Store({
   mutations: {
   },
   actions: {
+    build({state}) {
+      const {provider, lambda, dynamodb, sqs} = state;
+      const data = {
+        provider,
+        lambda: lambda.functions,
+        dynamodb: dynamodb.databases,
+        sqs: sqs.queues
+      }
+      appBuild.build(data);
+    }
   },
   modules: {
     lambda,
