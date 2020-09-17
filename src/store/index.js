@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import lambda from "./lambda";
 import dynamodb from "./dynamodb";
+import sqs from "./sqs";
 
 Vue.use(Vuex)
 
@@ -22,5 +23,6 @@ export default new Vuex.Store({
   modules: {
     lambda,
     dynamodb,
+    sqs,
   }
 })

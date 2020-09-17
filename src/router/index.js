@@ -5,6 +5,8 @@ import Lambda from '@/views/Lambda';
 import AddLambda from '@/views/Lambda/AddLambda';
 import Dynamodb from '@/views/Dynamodb';
 import AddDynamodb from '@/views/Dynamodb/AddDynamodb';
+import SQS from '@/views/SQS';
+import AddSQS from '@/views/SQS/AddSQS';
 
 Vue.use(VueRouter)
 
@@ -43,6 +45,21 @@ Vue.use(VueRouter)
     path: "/dynamodb/edit/:id",
     name: "EditDynamodb",
     component: AddDynamodb,
+  },
+  {
+    path: "/sqs",
+    name: "SQS",
+    component: SQS,
+  },
+  {
+    path: "/sqs/add",
+    name: "AddSQS",
+    component: AddSQS,
+  },
+  {
+    path: "/sqs/edit/:id",
+    name: "EditSQS",
+    component: AddSQS,
   }
 ]
 
