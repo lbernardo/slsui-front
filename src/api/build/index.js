@@ -5,6 +5,6 @@ export default {
             const {data} = await axios.post(`${process.env.VUE_APP_API_URL}/api/build`, d);
             return data;
         }
-        return "D";
+        return "development frontend";
     }
 }

@@ -28,6 +28,7 @@ export default {
   methods: {
     build() {
       this.$store.dispatch("build");
+      this.$router.push({"name": "Build"});
     }
   }
 }
