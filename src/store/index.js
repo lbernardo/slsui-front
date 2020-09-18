@@ -15,12 +15,16 @@ export default new Vuex.Store({
       runtime: null,
       memorySize: 1024,
       timeout: 30
-    }
+    },
+    yaml: ""
   },
   mutations: {
+    setYaml(state, content) {
+      state.yaml = content;
+    }
   },
   actions: {
-    build({state}) {
+    build({state, commit}) {
       const {provider, lambda, dynamodb, sqs} = state;
       const data = {
         provider,
@@ -28,7 +32,9 @@ export default new Vuex.Store({
         dynamodb: dynamodb.databases,
         sqs: sqs.queues
       }
-      appBuild.build(data);
+      appBuild.build(data).then(data => {
+        commit("setYaml", data);
+      })
     }
   },
   modules: {

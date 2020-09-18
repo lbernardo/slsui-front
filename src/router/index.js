@@ -7,6 +7,7 @@ import Dynamodb from '@/views/Dynamodb';
 import AddDynamodb from '@/views/Dynamodb/AddDynamodb';
 import SQS from '@/views/SQS';
 import AddSQS from '@/views/SQS/AddSQS';
+import Build from '@/views/Build';
 
 Vue.use(VueRouter)
 
@@ -60,6 +61,11 @@ Vue.use(VueRouter)
     path: "/sqs/edit/:id",
     name: "EditSQS",
     component: AddSQS,
+  },
+  {
+    path: "/build",
+    name: "Build",
+    component: Build
   }
 ]
 
