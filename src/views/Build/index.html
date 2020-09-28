@@ -1,5 +1,1 @@
-<div class="ui form">
-    <div class="field">
-        <textarea readonly v-model="yaml"></textarea>
-    </div>
-</div>
+<editor @init="editorInit" v-model="yaml" lang="yaml" width="100%" height="500"></editor>
